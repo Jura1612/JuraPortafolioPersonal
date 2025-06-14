@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jura | Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/J VFINAL.png" type="image/png">
+
+</head>
+
+<body>
+
+    <section class="hero" id="inicio">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="assets/Grenade.mp4" type="video/mp4">
+        </video>
+
+        <!-- Estrellas en las esquinas -->
+        <img src="assets/Star Original.svg" class="star top-left" alt="Estrella izquierda">
+        <img src="assets/Star Original.svg" class="star top-right" alt="Estrella derecha">
+
+        <!-- Texto central -->
+        <div class="hero-content">
+            <h1>IDEAS EN MOVIMIENTO<br>DISEÑO CON VOZ PROPIA</h1>
+        </div>
+
+        <!-- Footer con jura + descripción y navbar -->
+        <footer class="hero-footer">
+            <div class="left">
+                <div class="marca">jura</div>
+                <div class="separator-line"></div>
+                <div class="descripcion">
+                    <p>Portafolio personal de Juan Pablo Urbina<br>Diseñador de medios interactivos en Cali, Colombia
+                    </p>
+                </div>
+            </div>
+
+            <nav class="navbar">
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#portafolio">Portafolio</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </footer>
+    </section>
+
+    <section class="sobre-mi" id="sobre-mi">
+        <div class="lottie-container" onclick="reproducirAnimacion()">
+            <div id="animacionSobreMi"></div>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script>
+        let animacion;
+        document.addEventListener("DOMContentLoaded", function () {
+            animacion = lottie.loadAnimation({
+                container: document.getElementById("animacionSobreMi"),
+                renderer: "svg",
+                loop: false,
+                autoplay: false,
+                path: "assets/dataPruebaSobreMiV2.json", // tu animación .json
+            });
+        });
+
+        function reproducirAnimacion() {
+            animacion.goToAndPlay(0, true);
+        }
+    </script>
+
+    <!-- === SECCIÓN DE SERVICIOS (HTML) === -->
+    <section class="servicios-section" id="servicios">
+        <div class="servicios-header">
+            <h2>Lo que puedo hacer por ti</h2>
+            <h2>Servicios</h2>
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="arrow-btn left" id="arrowLeft">
+                <img src="assets/btonslider Izquiera.svg" alt="Flecha izquierda">
+            </button>
+
+            <div class="carousel" id="carousel">
+                <!-- Carta 1 -->
+                <div class="card" data-index="0">
+                    <img src="assets/Icono Diseño de Marca & Rebranding.png" alt="Marca" />
+                    <h3>Diseño de Marca & Rebranding</h3>
+                    <p>Desarrollo de identidad visual única para empresas y proyectos.</p>
+                    <div class="button-group">
+                        <div class="highlight-fill"></div>
+                        <button class="button-pill">Portafolio <img src="assets/Flecha diagonal derecha.svg"
+                                alt="Flecha" /></button>
+                        <button class="button-pill button-contact">Contacto <img
+                                src="assets/Flecha diagonal derecha.svg" alt="Flecha" /></button>
+                    </div>
+                </div>
+
+                <!-- Carta 2 -->
+                <div class="card" data-index="1">
+                    <img src="assets/Icono Motion Graphics (After Effects).png" alt="Motion" />
+                    <h3>Motion Graphics (After Effects)</h3>
+                    <p>Animaciones y videos cortos para redes, presentaciones y spots.</p>
+                    <div class="button-group">
+                        <div class="highlight-fill"></div>
+                        <button class="button-pill">Portafolio <img src="assets/Flecha diagonal derecha.svg"
+                                alt="Flecha" /></button>
+                        <button class="button-pill button-contact">Contacto <img
+                                src="assets/Flecha diagonal derecha.svg" alt="Flecha" /></button>
+                    </div>
+                </div>
+
+                <!-- Carta 3 -->
+                <div class="card" data-index="2">
+                    <img src="assets/Icono Fotografía Creativa.png" alt="Foto" />
+                    <h3>Fotografía Creativa</h3>
+                    <p>Sesiones fotográficas artísticas y de producto para tu marca.</p>
+                    <div class="button-group">
+                        <div class="highlight-fill"></div>
+                        <button class="button-pill">Portafolio <img src="assets/Flecha diagonal derecha.svg"
+                                alt="Flecha" /></button>
+                        <button class="button-pill button-contact">Contacto <img
+                                src="assets/Flecha diagonal derecha.svg" alt="Flecha" /></button>
+                    </div>
+                </div>
+
+                <!-- Carta 4 -->
+                <div class="card" data-index="3">
+                    <img src="assets/Icono Lettering & Tipografía Personal.png" alt="Lettering" />
+                    <h3>Lettering & Tipografía Personal</h3>
+                    <p>Diseño de letras a medida para logos, títulos y piezas gráficas.</p>
+                    <div class="button-group">
+                        <div class="highlight-fill"></div>
+                        <button class="button-pill">Portafolio <img src="assets/Flecha diagonal derecha.svg"
+                                alt="Flecha" /></button>
+                        <button class="button-pill button-contact">Contacto <img
+                                src="assets/Flecha diagonal derecha.svg" alt="Flecha" /></button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="arrow-btn right" id="arrowRight">
+                <img src="assets/btonslider Derecha.svg" alt="Flecha derecha">
+            </button>
+        </div>
+    </section>
+
+    <!-- === SCRIPT: Carrusel + hover de Contacto === -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const carousel = document.getElementById("carousel");
+            const cards = Array.from(carousel.children);
+            const total = cards.length;
+            let index = 0;
+
+            function updateCarousel() {
+                // Ocultar y limpiar todas
+                cards.forEach(card => {
+                    card.classList.remove("active", "inactive");
+                    card.style.display = "none";
+                });
+
+                // Calcular índices visibles
+                const prev = (index - 1 + total) % total;
+                const next = (index + 1) % total;
+
+                // Mostrar solo prev, actual y next
+                [prev, index, next].forEach(i => {
+                    cards[i].style.display = "flex";
+                });
+
+                // Aplicar clases visuales
+                cards[prev].classList.add("inactive");
+                cards[next].classList.add("inactive");
+                cards[index].classList.add("active");
+
+                // Mostrar botones solo en la activa
+                cards.forEach((card, i) => {
+                    const group = card.querySelector('.button-group');
+                    if (!group) return;
+
+                    if (i === index) {
+                        group.style.display = "flex";
+                        const contactBtn = group.querySelector('.button-contact');
+                        contactBtn.onmouseenter = () => group.classList.add('hover-contact');
+                        contactBtn.onmouseleave = () => group.classList.remove('hover-contact');
+                    } else {
+                        group.style.display = "none";
+                    }
+                });
+            }
+
+            // Flechas
+            document.getElementById("arrowLeft").addEventListener("click", () => {
+                index = (index - 1 + total) % total;
+                updateCarousel();
+            });
+
+            document.getElementById("arrowRight").addEventListener("click", () => {
+                index = (index + 1) % total;
+                updateCarousel();
+            });
+
+            updateCarousel(); // Carga inicial
+        });
+    </script>
+
+    <section class="portafolio-section" id="portafolio">
+        <h2 class="portafolio-title">Un vistazo a mi <span class="gradient-text">portafolio</span>?</h2>
+
+        <!-- Primer proyecto -->
+        <div class="portafolio-item">
+            <div class="info">
+                <p class="categoria">FOTOGRAFÍA CREATIVA</p>
+                <h3 class="titulo">Luz y Sombra: Retratos en Contraste</h3>
+                <p class="descripcion">
+                    Jugué con luz dura y sombras profundas para esculpir expresiones humanas. Con reflectores y banderas
+                    definí volúmenes, y en Lightroom perfeccioné tonos y texturas. Cada retrato busca transmitir
+                    misterio y fuerza en un mismo encuadre.
+                </p>
+                <button class="ver-mas">
+                    Ver más
+                    <img src="assets/Flecha diagonal derecha.svg" alt="Flecha" />
+                </button>
+            </div>
+            <div class="preview-lottie" id="lottie1"></div>
+        </div>
+
+        <!-- Segundo proyecto (espejado) -->
+        <div class="portafolio-item reverse">
+            <div class="preview-lottie" id="lottie2"></div>
+            <div class="info">
+                <p class="categoria">REBRANDING DE MARCA</p>
+                <h3 class="titulo">Piel Roja Renacida: Del Cigarrillo al Calentador</h3>
+                <p class="descripcion">
+                    Rediseñé la icónica silueta de Piel Roja con trazos limpios y una paleta cálida, adaptándola a
+                    dispositivos calentadores de tabaco menos nocivos. Creé el packaging y brand guideline para
+                    equilibrar nostalgia y modernidad, comunicando tecnología responsable. El resultado es una imagen
+                    renovada que respeta el legado y apuesta por la reducción de riesgos.
+                </p>
+                <button class="ver-mas">
+                    Ver más
+                    <img src="assets/Flecha diagonal derecha.svg" alt="Flecha" />
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const animacion1 = lottie.loadAnimation({
+            container: document.getElementById("lottie1"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "assets/AnimacionLuzSombra.json"
+        });
+
+        const observer1 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0.99) {
+                    animacion1.stop();
+                    animacion1.play();
+                } else if (entry.intersectionRatio === 0) {
+                    animacion1.stop(); // solo reinicia cuando NO se ve nada
+                }
+            });
+        }, {
+            threshold: [0, 1]
+        });
+
+        observer1.observe(document.getElementById("lottie1"));
+    </script>
+
+
+
+
+    <script>
+        const animacion2 = lottie.loadAnimation({
+            container: document.getElementById("lottie2"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "assets/AnimacionPielRoja.json"
+        });
+
+        const observer2 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0.99) {
+                    animacion2.stop();
+                    animacion2.play();
+                } else if (entry.intersectionRatio === 0) {
+                    animacion2.stop(); // reinicia solo cuando ya no se ve ni un píxel
+                }
+            });
+        }, {
+            threshold: [0, 1]
+        });
+
+        observer2.observe(document.getElementById("lottie2"));
+    </script>
+
+    <section class="contacto-footer" id="contacto">
+        <video autoplay loop muted playsinline class="video-fondo">
+            <source src="assets/Receta - SMTerminadoJPU.mp4" type="video/mp4" />
+        </video>
+
+        <div class="contacto-container">
+            <h2 class="contacto-titulo">
+                Tienes un proyecto <br />
+                en mente? <span class="gradient-text">Contáctame</span>
+            </h2>
+
+            <form class="contacto-form">
+                <div class="icono">
+                    <img src="assets/Contacto Icono mensaje.svg" alt="icono mensaje" />
+                </div>
+                <input type="email" placeholder="Tu correo electrónico" />
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-top">
+                <nav class="footer-nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#sobre-mi">Sobre mí</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#portafolio">Portafolio</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+                <div class="footer-logo">jura</div>
+                <div class="footer-redes">
+                    <img src="assets/behance-logo.svg" alt="Behance" />
+                    <img src="assets/Youtube-logo.svg" alt="YouTube" />
+                    <img src="assets/Instagram.logo.svg" alt="Instagram" />
+                    <img src="assets/Linkedin-logo.svg" alt="LinkedIn" />
+                </div>
+            </div>
+
+            <div class="footer-middle">juramadesign@gmail.com</div>
+            <div class="footer-bottom">
+                JuraDesign @ 2025. All rights reserved.
+            </div>
+
+            <div class="footer-linea"></div>
+        </footer>
+    </section>
+
+
+
+</body>

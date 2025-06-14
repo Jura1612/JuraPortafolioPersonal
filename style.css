@@ -1,0 +1,785 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chillax:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 282px;
+  padding: 41px 10px 0 10px;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+}
+
+.star:hover {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.top-left {
+  top: 30px;
+  left: 30px;
+}
+
+.top-right {
+  top: 30px;
+  right: 30px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 5.5rem;
+  line-height: 1.2;
+}
+
+.hero-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.separator-line {
+  width: 1px;
+  height: 40px;
+  font-style: italic;
+  background-color: #ddd;
+  margin: 0 1rem;
+  opacity: 0.8;
+  border-radius: 1px;
+}
+
+.marca {
+  font-family: 'Chillax', sans-serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #FF7F11;
+}
+
+.descripcion {
+  font-family: 'Satoshi', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+  font-weight: 500;
+  font-family: 'Satoshi', sans-serif;
+  transition: color 0.3s;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #FF7F11;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #FF7F11;
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+}
+
+.sobre-mi {
+  height: 100vh;
+  width: 100%;
+  background-color: #1c1c1c; /* o el fondo que tú uses */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* ← esto enfoca la parte baja */
+  overflow: hidden;
+  position: relative;
+}
+
+.lottie-container {
+  width: 100vw;
+  height: auto;
+  aspect-ratio: 16/9; /* o la proporción real de tu animación */
+  max-height: 130vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+  transform: translateY(0vh); /* empuja un poco hacia abajo para mostrar más de la parte inferior */
+}
+
+#animacionSobreMi svg {
+  width: 100%;
+  height: auto;
+}
+
+.servicios-section {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5vh 4vw;
+  background:
+    linear-gradient(90deg, #7A1D0E 0%, #FEC343 100%),
+    url("assets/Background Servicios.png");
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+.servicios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-bottom: 4vh;
+  padding: 0 5vw;
+}
+
+/* Carrusel con más espacio */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+  overflow: hidden;
+}
+
+/* CARTAS */
+.card {
+  flex-shrink: 0;
+  padding: 25px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.card img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.95rem;
+  max-width: 260px;
+  line-height: 1.4;
+}
+
+/* === CARTA ACTIVA === */
+.card.active {
+  width: 370px;
+  height: 520px;
+  background: rgba(31, 31, 31, 0.30);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(247, 245, 240, 0.8); /* opaco para soportar border-radius */
+  border-radius: 30px;
+  color: white;
+  gap: 28px;
+  justify-content: center;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* CARTAS INACTIVAS */
+.card.inactive {
+  width: 280px;
+  height: 450px;
+  background: rgba(31, 31, 31, 0.30);
+  backdrop-filter: blur(10px);
+  border: 1px solid #F7F5F0;
+  color: white;
+  opacity: 0.4;
+  filter: grayscale(40%);
+  justify-content: center;
+}
+
+.card.inactive p {
+  display: none;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.carousel {
+  display: flex;
+  gap: 3vw;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ocultar todas por defecto (luego se activan por JS) */
+.carousel .card {
+  display: none;
+}
+
+/* === ACTIVA === */
+.carousel .card.active {
+  width: 370px;
+  height: 520px;
+  border-radius: 30px;
+  background: rgba(31, 31, 31, 0.30);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid transparent;
+  border-image: radial-gradient(circle at top left, #F7F5F0 100%, rgba(201,201,201,0) 100%) 1;
+  color: white;
+  gap: 28px;
+  justify-content: center;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  position: relative;
+}
+
+/* === INACTIVAS === */
+.carousel .card.inactive {
+  width: 280px;
+  height: 450px;
+  background: rgba(31, 31, 31, 0.30);
+  backdrop-filter: blur(10px);
+  border: 1px solid #F7F5F0;
+  color: white;
+  opacity: 0.4;
+  filter: grayscale(40%);
+  justify-content: center;
+  padding: 24px 18px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  position: relative;
+}
+
+/* Ocultar texto de cartas inactivas */
+.carousel .card.inactive p {
+  display: none;
+}
+
+
+/* FLECHAS LATERALES */
+.arrow-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+.arrow-btn img {
+  width: 100%;
+  height: auto;
+}
+
+/* === GRUPO DE BOTÓN === */
+.button-group {
+  display: flex;
+  width: 240px;
+  height: 42px;
+  padding: 5px;
+  border-radius: 48px;
+  border: 1.2px solid #F7F5F0;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(7.2px);
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+
+/* === PILLS === */
+.button-pill {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: none;
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.25s ease-in-out;
+}
+
+/* ICONOS: invisibles por defecto */
+.button-pill img {
+  width: 12px;
+  height: 12px;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+/* Mostrar ícono de Portafolio por defecto */
+.button-pill:first-of-type img {
+  opacity: 1;
+}
+
+/* === RELLENO DESTACADO === */
+.highlight-fill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: 47%;
+  border-radius: 48px;
+  background-color: #FF8515;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+/* === EFECTO HOVER EN CONTACTO === */
+.button-group.hover-contact .highlight-fill {
+  left: 50%;
+  width: 48.5%;
+}
+
+/* Apagar flecha Portafolio, encender flecha Contacto */
+.button-group.hover-contact .button-pill:first-of-type img {
+  opacity: 0 !important;
+}
+
+.button-group.hover-contact .button-pill:last-of-type img {
+  opacity: 1 !important;
+}
+
+/*---Portafolio---*/
+
+.portafolio-section {
+  height: 100vh;
+  background-color: #1c1c1c;
+  padding: 6vh 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6vh;
+  box-sizing: border-box;
+}
+
+.portafolio-title {
+  color: #F7F5F0;
+  text-align: center;
+  font-family: "Cabinet Grotesk";
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -1.2px;
+  margin-top: 40px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #CC001B 0%, #FF7F11 50.07%, #FFD358 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.portafolio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portafolio-item.reverse {
+  flex-direction: row;
+}
+
+.portafolio-item.reverse .info {
+  text-align: right;
+  align-items: flex-end;
+}
+
+
+.info {
+  max-width: 48%;
+  color: #F7F5F0;
+}
+
+.categoria {
+  font-family: 'Satoshi', sans-serif;
+  color: #DD3842;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.titulo {
+  font-family: "Cabinet Grotesk";
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.descripcion {
+  font-family: 'Satoshi', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+/* Animación Lottie */
+.preview-lottie {
+  width: 600px;
+  height: 250px;
+  cursor: pointer;
+}
+
+/* Botón Ver más */
+.ver-mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid #F7F5F0;
+  color: #F7F5F0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.ver-mas img {
+  width: 14px;
+  height: 14px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
+}
+
+.ver-mas:hover {
+  background: #FF7F11;
+  color: black;
+  border-color: #FF7F11;
+}
+
+.ver-mas:hover img {
+  filter: brightness(0);
+}
+
+/**---Contacto + Footer---*/
+
+.contacto-footer {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  font-family: 'Satoshi', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video-fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.contacto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 3vh;
+  padding-bottom: 80px; /* Para centrar mejor respecto al footer */
+}
+
+.contacto-titulo {
+  text-align: center;
+  font-family: "Cabinet Grotesk";
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #CC001B 0%, #FF7F11 50.07%, #FFD358 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contacto-form {
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 999px;
+  overflow: hidden;
+  width: 600px;
+  height: 60px;
+  background: transparent;
+  gap: 6px;
+}
+
+/* ÍCONO MENSAJE - HOVER EFECTO */
+.contacto-form .icono {
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+.contacto-form .icono img {
+  width: 20px;
+  height: 20px;
+  transition: filter 0.3s;
+}
+
+.contacto-form .icono:hover {
+  background: #FF7F11;
+}
+
+.contacto-form .icono:hover img {
+  filter: brightness(0) invert(1); /* vuelve el ícono blanco */
+}
+
+.contacto-form input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-family: 'Satoshi', sans-serif;
+  outline: none;
+}
+
+.contacto-form button {
+  padding: 0 24px;
+  height: 85%;
+  margin-right: 10px;
+  border: 1px solid #FF7F11;
+  background: transparent;
+  color: #FF7F11;
+  border-radius: 999px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contacto-form button:hover {
+  background: #FF7F11;
+  color: black;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+  font-style: italic;
+}
+
+.footer-nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #FF7F11;
+  transition: width 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #FF7F11;
+}
+
+.footer-nav a:hover::after {
+  width: 100%;
+}
+
+.footer-logo {
+  color: #FF7F11;
+  font-family: 'Chillax Medium', sans-serif;
+  font-size: 1.4rem;
+  margin-right: 220px; /* para centrar visualmente */
+}
+
+.footer-redes {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-redes img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
+}
+
+.footer-redes img:hover {
+  filter: invert(48%) sepia(91%) saturate(900%) hue-rotate(-8deg) brightness(1.05) contrast(1);
+}
+
+/* Middle y bottom */
+.footer-middle {
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-bottom {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+
+.footer-linea {
+  height: 2px;
+  background-color: #FF7F11;
+  width: 100%;
+  margin-top: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
